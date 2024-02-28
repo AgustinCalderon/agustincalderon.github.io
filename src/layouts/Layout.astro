@@ -1,0 +1,37 @@
+---
+interface Props {
+	title: string;
+}
+
+import Header from '../components/Header.astro';
+import Navegation from '../components/Navegation.astro';
+import SocialPill from '../components/SocialPill.astro';
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/public/resume.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Header />
+		<SocialPill />
+		<Navegation />
+		<slot />
+	</body>
+</html>
+<style is:global>
+	:root {
+		
+	}
+	html {
+		font-family: system-ui, sans-serif; 
+	}
+	
+</style>
