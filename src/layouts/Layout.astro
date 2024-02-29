@@ -6,6 +6,10 @@ interface Props {
 import Header from '../components/Header.astro';
 import Navegation from '../components/Navegation.astro';
 import SocialPill from '../components/SocialPill.astro';
+import LinkedInIcon from '../components/icons/Linkedin.astro';
+import GithubIcon from '../components/icons/GitHub.astro';
+import Linkedin from '../components/icons/Linkedin.astro';
+import Footerr from '../components/Footerr.astro';
 const { title } = Astro.props;
 ---
 
@@ -15,23 +19,40 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/public/resume.png" />
+		<link rel="icon" type="image/svg+xml" href="briefcase-filled.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
 		<Header />
-		<SocialPill />
+
 		<Navegation />
+		
 		<slot />
+		
+		<Footerr />
 	</body>
 </html>
+
 <style is:global>
 	:root {
 		
 	}
 	html {
 		font-family: system-ui, sans-serif; 
+		scroll-behavior: smooth;
 	}
 	
+	body{
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		body {
+			scroll-behavior: auto;
+		}
+		
+	}
+
 </style>
+
+	
